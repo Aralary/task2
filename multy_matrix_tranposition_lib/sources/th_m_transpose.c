@@ -1,5 +1,5 @@
-//Copyright 2022 <Aralary>
-#include "th_m_transpose.h"
+// Copyright 2022 <Aralary>
+#include "headers/th_m_transpose.h"
 
 void *th_transpose(void *thread_data) {
     th_data *data = (th_data *) thread_data;

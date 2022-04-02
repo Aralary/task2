@@ -1,5 +1,5 @@
 //Copyright 2022 <Aralary>
-#include "m_transpose.h"
+#include "headers/m_transpose.h"
 
 int **transpose(int **matrix, size_t rows, size_t columns) {
     int **m2 = malloc(rows * sizeof(int *));
