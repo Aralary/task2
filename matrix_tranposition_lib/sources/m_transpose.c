@@ -1,4 +1,4 @@
-//Copyright 2022 <Aralary>
+// Copyright 2022 <Aralary>
 #include "headers/m_transpose.h"
 
 int **transpose(int **matrix, size_t rows, size_t columns) {
@@ -22,7 +22,7 @@ void print_matrix(int **matrix, size_t rows, size_t columns) {
 }
 
 
-//program arguments : path_to_file_with_matrix , count_of_threads
+// program arguments : path_to_file_with_matrix , count_of_threads
 void prepare_matrix_file(char path[], size_t rows, size_t columns) {
     FILE *file;
     if ((file = fopen(path, "w")) == NULL) {

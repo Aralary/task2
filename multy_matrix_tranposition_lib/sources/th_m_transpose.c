@@ -5,17 +5,20 @@ void *th_transpose(void *thread_data) {
     th_data *data = (th_data *) thread_data;
     for (size_t i = data->th_id; i < data->rows; i += data->th_count) {
         for (size_t j = 0; j < data->columns; ++j) {
-            data->res[i][j] = data->matrix[data->rows - 1 - i][data->columns - 1 - j];
+            data->res[i][j] =
+                    data->matrix[data->rows - 1 - i][data->columns - 1 - j];
         }
     }
 }
 
-int **multi_thread_transpose(int **matrix, int add_threads_count, size_t rows, size_t columns) {
+int **multi_thread_transpose
+        (int **matrix, int add_threads_count, size_t rows, size_t columns) {
     int **res = malloc(rows * sizeof(int *));
     for (size_t i = 0; i < rows; ++i) {
         res[i] = malloc(columns * sizeof(int));
     }
-    pthread_t *threads = (pthread_t *) malloc(add_threads_count * sizeof(pthread_t));
+    pthread_t *threads =
+            (pthread_t *) malloc(add_threads_count * sizeof(pthread_t));
     th_data *thData = (th_data *) malloc(add_threads_count * sizeof(th_data));
     for (size_t i = 1; i <= add_threads_count; ++i) {
         thData[i - 1].columns = columns;

@@ -1,11 +1,11 @@
-//Copyright 2022 <Aralary>
-#ifndef TASK2_TH_M_TRANSPOSE_H
+// Copyright 2022 <Aralary>
+#ifndef MULTY_MATRIX_TRANPOSITION_LIB_HEADERS_TH_M_TRANSPOSE_H_
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <pthread.h>
 
-#define TASK2_TH_M_TRANSPOSE_H
+#define MULTY_MATRIX_TRANPOSITION_LIB_HEADERS_TH_M_TRANSPOSE_H_
 
 typedef struct {
     int **matrix;
@@ -18,8 +18,9 @@ typedef struct {
 
 void *th_transpose(void *thread_data);
 
-int **multi_thread_transpose(int **matrix, int add_threads_count, size_t rows, size_t columns);
+int **multi_thread_transpose
+        (int **matrix, int add_threads_count, size_t rows, size_t columns);
 
 void matrix_cleaner(int **matrix, size_t rows);
 
-#endif // TASK2_TH_M_TRANSPOSE_H
+#endif  // MULTY_MATRIX_TRANPOSITION_LIB_HEADERS_TH_M_TRANSPOSE_H_
