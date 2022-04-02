@@ -1,3 +1,4 @@
+//Copyright 2022 <Aralary>
 #include "m_transpose.h"
 
 int **transpose(int **matrix, size_t rows, size_t columns) {
@@ -22,7 +23,7 @@ void print_matrix(int **matrix, size_t rows, size_t columns) {
 
 
 //program arguments : path_to_file_with_matrix , count_of_threads
-void prepare_matrix_file(char path[],size_t rows,size_t columns) {
+void prepare_matrix_file(char path[], size_t rows, size_t columns) {
     FILE *file;
     if ((file = fopen(path, "w")) == NULL) {
         printf("Не удалось открыть файл");
@@ -39,7 +40,7 @@ void prepare_matrix_file(char path[],size_t rows,size_t columns) {
     fclose(file);
 }
 
-int **read_from_file(char path[],size_t rows,size_t columns) {
+int **read_from_file(char path[], size_t rows, size_t columns) {
     FILE *file;
     if ((file = fopen(path, "r+")) == NULL) {
         printf("Не удалось открыть файл");

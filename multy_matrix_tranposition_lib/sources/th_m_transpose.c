@@ -1,3 +1,4 @@
+//Copyright 2022 <Aralary>
 #include "th_m_transpose.h"
 
 void *th_transpose(void *thread_data) {

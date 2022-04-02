@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <sys/sysinfo.h>
-#include <pthread.h>
 #include <time.h>
 
 #include "m_transpose.h"
 #include "th_m_transpose.h"
+
 #define ROWS 10000
 #define COLUMNS 5000
 
@@ -13,8 +13,8 @@ int main(int argc, char *argv[]) {
     if (argc < 3) {
         return 0;
     }
-    prepare_matrix_file(argv[1],ROWS,COLUMNS);
-    int **matrix = read_from_file(argv[1],ROWS,COLUMNS);
+    prepare_matrix_file(argv[1], ROWS, COLUMNS);
+    int **matrix = read_from_file(argv[1], ROWS, COLUMNS);
 
     int add_threads_count = atoi(argv[2]);
     if (add_threads_count < 1) {
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
     clock_t start, end;
     if (add_threads_count > 0) {
         start = clock();
-        int **res = multi_thread_transpose(matrix,add_threads_count,ROWS,COLUMNS);
+        int **res = multi_thread_transpose(matrix, add_threads_count, ROWS, COLUMNS);
         end = clock();
         printf("Transpose duration with %d threads is %.6lf seconds\n", add_threads_count + 1,
                (double) (end - start) / (double) (CLOCKS_PER_SEC));

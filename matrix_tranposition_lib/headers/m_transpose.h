@@ -1,7 +1,4 @@
-//
-// Created by aralary on 31/03/2022.
-//
-
+//Copyright 2022 <Aralary>
 #ifndef TASK2_M_TRANPOSE_H
 
 #include <stdlib.h>
@@ -17,4 +14,4 @@ int **read_from_file(char path[], size_t rows, size_t columns);
 
 void prepare_matrix_file(char path[], size_t rows, size_t columns);
 
-#endif //TASK2_M_TRANPOSE_H
+#endif // TASK2_M_TRANPOSE_H

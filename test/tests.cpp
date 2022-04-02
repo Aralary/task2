@@ -1,4 +1,4 @@
-
+//Copyright 2022 <Aralary>
 #include <gtest/gtest.h>
 
 extern "C" {
@@ -36,9 +36,9 @@ TEST(matrix_transpose, test2) {
     EXPECT_EQ(transposed1[0][0], 311);
 
     int **transposed2 = multi_thread_transpose(matrix, threads_count, rows, columns);
-    for(size_t i = 0 ; i < rows; ++i){
-        for(size_t j = 0 ; j < columns; ++j){
-            EXPECT_EQ(transposed1[i][j],transposed2[i][j]);
+    for (size_t i = 0; i < rows; ++i) {
+        for (size_t j = 0; j < columns; ++j) {
+            EXPECT_EQ(transposed1[i][j], transposed2[i][j]);
         }
     }
     EXPECT_EQ(transposed1[rows - 1][0], matrix[0][columns - 1]);
