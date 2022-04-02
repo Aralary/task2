@@ -11,9 +11,9 @@ void *th_transpose(void *thread_data) {
 }
 
 int **multi_thread_transpose(int **matrix, int add_threads_count, size_t rows, size_t columns) {
-    int **res = (int **) malloc(rows * sizeof(int *));
+    int **res = malloc(rows * sizeof(int *));
     for (size_t i = 0; i < rows; ++i) {
-        res[i] = (int *) malloc(columns * sizeof(int));
+        res[i] = malloc(columns * sizeof(int));
     }
     pthread_t *threads = (pthread_t *) malloc(add_threads_count * sizeof(pthread_t));
     th_data *thData = (th_data *) malloc(add_threads_count * sizeof(th_data));

@@ -44,4 +44,5 @@ TEST(matrix_transpose, test2) {
     EXPECT_EQ(transposed1[rows - 1][0], matrix[0][columns - 1]);
     matrix_cleaner(matrix, rows);
     matrix_cleaner(transposed1, rows);
+    matrix_cleaner(transposed2, rows);
 }
